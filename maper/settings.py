@@ -23,7 +23,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'main'
+    'main',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -116,3 +117,9 @@ reCAPTCHA_SITE_KEY=config('reCAPTCHA_SITE_KEY')
 reCAPTCHA_SECRET_KEY=config('reCAPTCHA_SECRET_KEY')
 
 GOOGLE_KEY=config('GOOGLE_KEY')
+
+LOGIN_URL = "users:sign-in"
+LOGIN_REDIRECT_URL = "users:account"
+LOGOUT_REDIRECT_URL = "users:sign-in"
+
+BASE_COUNTRY = "UK"
